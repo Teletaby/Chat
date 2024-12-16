@@ -81,18 +81,17 @@
     <h1>VitalPoint Chatbot</h1>
     <div id="chat-history"></div>
     <form id="chat-form">
-      <input type="text" id="user-input" placeholder="Enter your message">
+      <input type="text" id="user-input" placeholder="Enter your message" />
       <button type="submit">Send</button>
     </form>
   </div>
   <div id="loader">
-    <img src="loader.gif" width="150px" alt="Loading...">
+    <img src="loader.gif" width="150px" alt="Loading..." />
   </div>
   <script>
     const chatHistory = document.getElementById('chat-history');
     const userInput = document.getElementById('user-input');
     const form = document.getElementById('chat-form');
-    let userInfo = {}; // Store user info globally
 
     async function sendMessage() {
       const userMessage = userInput.value;
@@ -118,7 +117,6 @@
         chatHistory.scrollTop = chatHistory.scrollHeight;
       } catch (error) {
         console.error('Error:', error);
-        // Handle errors gracefully
       }
     }
 
