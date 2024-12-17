@@ -109,9 +109,9 @@
         const data = await response.json();
         const botMessage = data.response;
 
-        // Add user and bot messages to the chat history
+        // Add user and bot messages to the chat history with <br> for line breaks
         chatHistory.innerHTML += `<div class="user-message">${userMessage}</div>`;
-        chatHistory.innerHTML += `<div class="bot-message">${botMessage}</div>`;
+        chatHistory.innerHTML += `<div class="bot-message">${botMessage.replace(/\n/g, '<br>')}</div>`;
 
         // Scroll to the bottom of the chat history
         chatHistory.scrollTop = chatHistory.scrollHeight;
