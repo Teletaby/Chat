@@ -12,6 +12,7 @@
   "dependencies": {
     "@google-cloud/aiplatform": "^3.34.0",
     "@google/generative-ai": "^0.1.3",
+    "compromise": "^14.14.3",
     "crypto": "^1.0.1",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",

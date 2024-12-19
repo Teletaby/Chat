@@ -10,6 +10,7 @@
       align-items: center;
       min-height: 100vh;
       background-color: #f0f0f0;
+      overflow-y: hidden;
     }
 
     #chat-container {
@@ -81,7 +82,7 @@
     <h1>VitalPoint Chatbot</h1>
     <div id="chat-history"></div>
     <form id="chat-form">
-      <input type="text" id="user-input" placeholder="Enter your message" />
+      <input autocomplete="off" type="text" id="user-input" placeholder="Enter your message" />
       <button type="submit">Send</button>
     </form>
   </div>

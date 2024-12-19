@@ -25,7 +25,7 @@ const API_KEY = process.env.API_KEY;
 const DOCTORS = [
     {
         id: 1,
-        name: "Dr. Luwi Otanes",
+        name: "Luwi Otanes",
         specialty: "Family Medicine",
         qualifications: "MD, Board Certified in Family Practice",
         experience: "15 years",
@@ -34,12 +34,12 @@ const DOCTORS = [
             { day: "Wednesday", slots: ["9:00 AM", "11:00 AM", "3:00 PM"] },
             { day: "Friday", slots: ["10:00 AM", "1:30 PM", "4:30 PM"] }
         ],
-        location: "Main Clinic - Manila",
+        location: "Estrella Hospital - Silang",
         contactNumber: "09664819348"
     },
     {
         id: 2,
-        name: "Dr. Carl Armendi",
+        name: "Carl Armendi",
         specialty: "Cardiology",
         qualifications: "MD, FACC, Interventional Cardiology",
         experience: "20 years",
@@ -48,12 +48,12 @@ const DOCTORS = [
             { day: "Thursday", slots: ["9:00 AM", "2:00 PM", "4:00 PM"] },
             { day: "Saturday", slots: ["10:00 AM", "12:00 PM"] }
         ],
-        location: "Heart Center - Marikina",
+        location: "Naic Doctors Hospital",
         contactNumber: "09265828591"
     },
     {
         id: 3,
-        name: "Dr. Justin Gutierrez",
+        name: "Justin Gutierrez",
         specialty: "Pediatrics",
         qualifications: "MD, Board Certified Pediatrician",
         experience: "12 years",
@@ -62,7 +62,7 @@ const DOCTORS = [
             { day: "Tuesday", slots: ["10:00 AM", "1:30 PM", "3:30 PM"] },
             { day: "Thursday", slots: ["9:00 AM", "2:00 PM", "4:30 PM"] }
         ],
-        location: "Children's Clinic - Taguig",
+        location: "Los Banos Doctors Hospital",
         contactNumber: "096618491944"
     }
 ];
@@ -239,7 +239,7 @@ async function runChat(userInput, session) {
         if (tokens.includes("schedul") || tokens.includes("book") || tokens.includes("appoint")) {
             session.userInfo.infoCapture.appointmentStep = 'selectDoctor';
             return `Let's schedule your appointment. Please choose a doctor by name or specialty:<br><br>` +
-                   DOCTORS.map(doc => `- ${doc.name} (${doc.specialty})`).join("<br>");
+                   DOCTORS.map(doc => `- Dr. ${doc.name} (${doc.specialty})`).join("<br>");
         }
 
 
@@ -250,7 +250,7 @@ async function runChat(userInput, session) {
             history: [
                 {
                     role: "user",
-                    parts: [{ text: `You are Sam, a friendly assistant who works for VitalPoint. The user's name is ${session.userInfo.name} and their email is ${session.userInfo.email}. Your job is to help the user schedule doctor appointments and manage patient information. Do not answer things not related to vitalpoint or healthcare. Remember all scheduled appointment made by the user and display them all when asked.` }],
+                    parts: [{ text: `You are Sam, a friendly assistant who works for VitalPoint which is based in the Philippines. The user's name is ${session.userInfo.name} and their email is ${session.userInfo.email}. Your job is to help the user schedule doctor appointments and manage patient information. Do not answer things not related to vitalpoint or healthcare. You can answer medical advice. Remember all scheduled appointment made by the user and display them all when asked.` }],
                 },
                 {
                     role: "model",
